@@ -10,9 +10,6 @@ from . import serializers, models
 
 
 class QuoteList(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
-
     def get(self, request, format=None):
         obj = models.MyQuotes.objects.all()
         serializer = serializers.MyQuotesSerializer(obj, many=True)
